@@ -4,11 +4,25 @@ def test() {
     // Abstracting simple commands like this enables us to 
     // wrap them in other functionality, like for example
     // specifying custom maven config.
-    sh 'mvn verify'
+	
+	// if (isUninx()) {
+	// 	sh 'mvn verify'
+	// } else {
+	// 	bat('mvn verify')
+	// }
+
+	echo 'mvn verify'
 }
 
 def package() {
-    sh 'mvn package -Dmaven.test.skip=true'
+	// if (isUnix()) {
+	// 	sh 'mvn package -Dmaven.test.skip=true'
+	// } else {
+	// 	bat('mvn package -Dmaven.test.skip=true')
+	// }
+
+	echo 'mvn package -Dmaven.test.skip=true'
+
 }
 
 return this
